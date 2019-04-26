@@ -20,9 +20,27 @@ namespace LINQ2
     /// </summary>
     public partial class MainWindow : Window
     {
+        NORTHWNDEntities db = new NORTHWNDEntities();
+
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var query = from c in db.Customers
+                        select c.CompanyName;
+
+            Ex1Listbox.ItemsSource = query.ToList();
+        }
+
+        private void Ex2Button_Click(object sender, RoutedEventArgs e)
+        {
+            var query = from c in db.Customers
+                        select c;
+
+            Ex2DataGrid.ItemsSource = query.ToList();
         }
     }
 }

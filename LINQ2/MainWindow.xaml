@@ -6,7 +6,35 @@
         xmlns:local="clr-namespace:LINQ2"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+    <TabControl>
+        <TabItem Header="Ex1" Width="50">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="90*"/>
+                </Grid.RowDefinitions>
+
+                <Button Grid.Row="0" Content="Get Data" Width="100" Height="25" Click="Button_Click"/>
+                <ListBox Grid.Row="1" Name="Ex1Listbox" Height="350"/>
+
+            </Grid>
+        </TabItem>
+
+        <TabItem Header="Ex2" Width="50">
+            <Grid>
+               
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="90*"/>
+                </Grid.RowDefinitions>
+
+                <Button Grid.Row="0" Name="Ex2Button" Content="Get Data2" Click="Ex2Button_Click" Width="100" />
+                <DataGrid Grid.Row="1" Name="Ex2DataGrid" />
+
+            </Grid>
+        </TabItem>
+
+    </TabControl>
+
+
 </Window>
